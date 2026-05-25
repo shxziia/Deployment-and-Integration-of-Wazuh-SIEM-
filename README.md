@@ -1,4 +1,4 @@
-# Deployment-and-Integration-of-Wazuh-SIEM-
+# Deployment and Integration of Wazuh SIEM
 
 ## Objective
 [Brief Objective]
