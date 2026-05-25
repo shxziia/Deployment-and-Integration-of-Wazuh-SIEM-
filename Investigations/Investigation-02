@@ -1,0 +1,21 @@
+Alert: Priviledge Escalation via Sudo Command Execution
+
+Source: Linux Authentication Logs (Sudo/PAM)
+Target Machine: Wazuh Linux Endpoint
+Source User: jacked
+Destination User: root
+
+Activity Observed:
+- Successful execution of sudo command by the user
+- Root level session was opened via PAM authentication
+- User account gained administrative access
+
+Command Executed:
+nano /var/ossec/etc/rules/local_rules.xml
+
+Severity: Medium
+
+Analysis: User successfully escalated priviledges using sudo, which allowed the user to gain root level access. This demonstrates sensitive activity as it allows modification of the system configuration file. 
+
+Conclusion:
+This demonstrates priviledge escalation activity and should be monitored especially when administrative access should be restricted.
