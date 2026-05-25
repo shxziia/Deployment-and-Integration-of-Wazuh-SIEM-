@@ -84,3 +84,23 @@ Alert Details Expanded (Priviledge Escalation):
 The alert shows that the user 'jacked' has successfully escalated priviledges using sudo and accessed the Wazuh rules configuration file. This activity was mapped to MITRE ATT&CK techniques T1548.003 (Sudo and Sudo Cashing) which indicates priviledge escalation behaviour. 
 
 This investigation overall demonstrates Wazuh platforms ability to centralise security events and provide detailed information which is required for SOC analysis and incident triage.
+
+### Event Correlation and Pattern Detection
+
+We then analysed the security events in the Wazuh interphase to identify potential attack points. To analyse this, we filtered the authentication failure logs by rule ID and source IP address over the past 24 hours.
+
+Correlation Views:
+
+<img width="1912" height="813" alt="image" src="https://github.com/user-attachments/assets/3eea186c-c4a4-4c1c-b50b-8f23fe2b81bd" />
+
+The results show repeated failed login attempts coming from the same source within a short timeframe. This patterns indicates potential brute force or credential guessing behaviour. Multiple events across time where correlated with source attributes to distinguish between isolated login failures and repeated suspicious authentication activity. This shows that SIEM tools support behavioural based threat detection rather than individual event analysis.
+
+### SOC Dashboard 
+
+We created a SOC dashboard in Wazuh to visualise and monitor security events. The dashboard presents key security metrics in a clear and attainable way. To show failed login attempts over time we created a line chart and to source the top IP addresses involved in suspicious activity, we demonstrated it in a bar chart.We also created a pie chart to represent the distribution of different types of security alerts based on severity and event category. The dashboard allowed us to convert raw log data into meaningful visual insights. This makes it easier to identify patterns and potential security threats within the environment. 
+
+SOC Dashboard:
+
+<img width="1917" height="871" alt="image" src="https://github.com/user-attachments/assets/945d188d-55fd-4886-abcf-a6b906ae7ebd" />
+
+
