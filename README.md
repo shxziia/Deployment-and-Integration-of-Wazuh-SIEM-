@@ -9,7 +9,7 @@
 
 ## Steps
 
-# SIEM Platfrom
+### SIEM Platfrom
 
 I successfully accessed the Wazuh SIEM dashboard to ensure that the centralised monitoring platform was functioning correctly. The SIEM dashboard includes centralised event monitoring, endpoint visibility, threat detection workflows, SOC monitoring capabilities and, security alert visualisation. This shows that SIEM infrastructure is operational and provides real time security monitoring.  
 
