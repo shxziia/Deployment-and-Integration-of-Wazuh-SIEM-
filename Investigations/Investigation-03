@@ -1,0 +1,19 @@
+Alert: Suspicious Authentication Activity (SSH / login attempts)
+
+Source: Linux Authentication Logs / SSH service
+Target Machine: Wazuh Endpoint (Linux VM)
+Source IP: 192.168.1.121 
+User Attempted: Invalid/Fake User Accounts
+
+Activity Observed:
+- Failed authentication attempts via SSH service detected
+- Repeated login attempts using invalid credentials
+- Within a short time Window, authentication failures were recorded
+
+Attempts: 5+ failed login attempts
+Severity: Medium
+
+Analysis: Possible brute force or credential guessing activity due to repeated failed SS authentication attempts. This mirrors real world attack techniques targeting SSH services.
+
+Conclusion:
+The system successfully captured SSH authentication failures  and presented visibility into remote access attack patterns. 
