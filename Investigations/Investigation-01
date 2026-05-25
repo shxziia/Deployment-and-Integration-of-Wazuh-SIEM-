@@ -1,0 +1,19 @@
+Alert: Authentication Failure / Possible Brute Force Attempt
+
+Source: Windows Security Logs (Event ID 4625)
+Target Machine: Windows11Host
+Source IP: 192.168.1.121
+User Account: Unknown / Invalid credentials
+
+Activity Observed:
+- Failed login attempts on Windows endpoint
+- Within a short time window, authentication failures occurred
+- No successful login during the monitoring period
+
+Attempts: Approximately 5-10 failed login attempts
+Serverity: Medium to High (Based on frequency and pattern)
+
+Analysis: Repeated authentication indicates password guessing or possible brute force acts. This is assciated with unauthorized access attempts.
+
+Conclusion:
+The activity is classed as suspicious and should be monitored for escalations if successful authentication is observed.
