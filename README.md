@@ -120,3 +120,8 @@ SOC Dashboard:
 <img width="1917" height="871" alt="image" src="https://github.com/user-attachments/assets/945d188d-55fd-4886-abcf-a6b906ae7ebd" />
 
 
+
+### References
+
+1. MITRE (2025). MITRE ATT&CK. [online] Mitre.org. Available at: https://attack.mitre.org/.
+2. Wazuh (2024). Wazuh documentation. [online] documentation.wazuh.com. Available at: https://documentation.wazuh.com/current/index.html.
