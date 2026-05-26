@@ -5,7 +5,7 @@
 
 This projects onjective is to deploy and configure a security monitoring environment using Wazh SIEM to collect, analyse and visualise security events from endpoint systems. The aim of this lab is to demonstrate how security logs can be monitored and correlated to identify suspicious activity such as failed logins, priviledge escalation and potential brute force attacks. This project also focuses on building a basic SOC style dashboard to improve visibility into security events and support incident detection and analysis.
 
-## Skills Learned
+## Skills Gained
 
 - Deployed and configured Wazuh SIEM for security monitoring
 - Log collection and event processing from endpoint systems
