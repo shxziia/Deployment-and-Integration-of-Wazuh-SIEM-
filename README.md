@@ -3,7 +3,7 @@
 ## Objective
 [Brief Objective]
 
-This projects onjective is to deploy and configure a security monitoring environment using Wazh SIEM to collect, analyse and visualise security events from endpoint systems. The aim of this lab is to demonstrate how security logs can be monitored and correlated to identify suspicious activity such as failed logins, priviledge escalation and potential brute force attacks. This project also focuses on building a basic SOC style dashboard to improve visibility into security events and support incident detection and analysis.
+This projects objective is to deploy and configure a security monitoring environment using Wazuh SIEM to collect, analyse and visualise security events from endpoint systems. The aim of this lab is to demonstrate how security logs can be monitored and correlated to identify suspicious activity such as failed logins, privilege escalation and potential brute force attacks. This project also focuses on building a basic SOC style dashboard to improve visibility into security events and support incident detection and analysis.
 
 ## Skills Gained
 
@@ -19,15 +19,15 @@ This projects onjective is to deploy and configure a security monitoring environ
 
 - Wazuh - primary SIEM platform for collecting, analysing and visualising security logs from endpoint systems
 - Windows Operating System - Endpoint to generate authentication events and security logs
-- Kali Linux - generated and tested security events such as SSH and priviledge escalation activity
+- Kali Linux - generated and tested security events such as SSH and privilege escalation activity
 - VirtualBox - Host multiple virtual machines for lab environment
 - Web Browser - used to access Wazuh dashboard and investigate alerts and events
 
 ## Steps
 
-### SIEM Platfrom
+### SIEM Platform
 
-I successfully accessed the Wazuh SIEM dashboard to ensure that the centralised monitoring platform was functioning correctly. The SIEM dashboard includes centralised event monitoring, endpoint visibility, threat detection workflows, SOC monitoring capabilities and, security alert visualisation. This shows that SIEM infrastructure is operational and provides real time security monitoring.  
+I successfully accessed the Wazuh SIEM dashboard to ensure that the centralised monitoring platform was functioning correctly. The SIEM dashboard includes centralised event monitoring, endpoint visibility, threat detection workflows, SOC monitoring capabilities and security alert visualisation. This shows that SIEM infrastructure is operational and provides real time security monitoring.  
 
 Wazhu Dashboard:
 
@@ -43,13 +43,13 @@ Agents Connected:
 
 ### Log Ingestion and Real Time Event Verification
 
-To test whether the logs were successfully ingested into the Wazuh SIEM platform, we reviewed the security events dashboard. The Windows endpoint showed security related events being sent to SIEM which indicates that the logs forwading between the agent and the manager were working correctly.
+To test whether the logs were successfully ingested into the Wazuh SIEM platform, we reviewed the security events dashboard. The Windows endpoint showed security related events being sent to SIEM which indicates that the logs forwarding between the agent and the manager were working correctly.
 
 Live Events Stream:
 
 <img width="1911" height="872" alt="image" src="https://github.com/user-attachments/assets/d1ab3477-0489-4f8d-8361-813bcf2b0b7e" />
 
-Events were seen updating in real time  in the security events section indicating that the system was actively recieving and processing data from the connected endpoint. The data included basic system and security events generated through normal activity on the machine. To confirm the accuracy of log collection, we will generate additional user activity on the endpoint to verify that events are captured and displayed correctly within the Wazuh SIEM platfrom. 
+Events were seen updating in real time  in the security events section indicating that the system was actively receiving and processing data from the connected endpoint. The data included basic system and security events generated through normal activity on the machine. To confirm the accuracy of log collection, we will generate additional user activity on the endpoint to verify that events are captured and displayed correctly within the Wazuh SIEM platform. 
 
 ### Baseline Testing (Normal User Activity)
 
@@ -60,11 +60,11 @@ Once these measures were performed, we reviewed the Wazuh SIEM Security Events d
 Normal Activity Logs:
 <img width="1898" height="867" alt="image" src="https://github.com/user-attachments/assets/1a254b3b-b068-4b4f-bf2e-c3af6d88af86" />
 
-The endpoint was observed sending regular system and security events which confirms that user driven activity is being successfully captured by SIEM. Activity such as web browsing and system interactions generated proccess creation event within SIEM. This behaviour is expected as user actions generate multiple proccesses in modern operating systems. This confirms that the log collection process is funtioning correctly for normal user behaviour and the system recorded and displayed the endpoint activity. We wilol use this baseline as a reference point for identifying suspicious and abnormal behaviour in the lab environment.
+The endpoint was observed sending regular system and security events which confirms that user driven activity is being successfully captured by SIEM. Activity such as web browsing and system interactions generated process creation event within SIEM. This behaviour is expected as user actions generate multiple processes in modern operating systems. This confirms that the log collection process is functioning correctly for normal user behaviour and the system recorded and displayed the endpoint activity. We will use this baseline as a reference point for identifying suspicious and abnormal behaviour in the lab environment.
 
 ### Attack Simulation
 
-A series of authentication events were performed on the endpoint to simulate potentical brute force and priveledge escalation activity. This included failed login attempts using incorrect passowrds and usernames which was followed by successful authentication sessions and a priveledge escalation using sudo.
+A series of authentication events were performed on the endpoint to simulate potential brute force and privilege escalation activity. This included failed login attempts using incorrect passwords and usernames which was followed by successful authentication sessions and a privilege escalation using Sudo.
 
 Alerts triggered:
 
@@ -72,11 +72,11 @@ Alerts triggered:
 
 <img width="1913" height="342" alt="image" src="https://github.com/user-attachments/assets/37448afd-5730-4b30-930c-2d49bf95c82c" />
 
-Wazuh SIEM captured authentication failures and successful priveledge elevation events which demonstrates visibility across multiple stages of an attack cycle. This includes credential guessing, successful access and escalation to root priveledges. 
+Wazuh SIEM captured authentication failures and successful privilege elevation events which demonstrates visibility across multiple stages of an attack cycle. This includes credential guessing, successful access and escalation to root privileges. 
 
 ### Multi-Event Security Investigation
 
-To investigate the security events we selected the alerts from Wazuh SIEM dashboard and expanded them to analyze them in detail. The alerts provide forensic key information such as the source of the event, the target machine, the timestamp, the rule ID, and the assigned severity level.
+To investigate the security events, we selected the alerts from Wazuh SIEM dashboard and expanded them to analyse them in detail. The alerts provide forensic key information such as the source of the event, the target machine, the timestamp, the rule ID, and the assigned severity level.
 
 Alert Details Expanded (Logon Failure):
 
@@ -90,16 +90,16 @@ Alert Details Expanded (Successful Login):
 <img width="870" height="787" alt="image" src="https://github.com/user-attachments/assets/46913b3b-2f7a-4575-ba35-650fd4c06cb1" />
 <img width="598" height="157" alt="image" src="https://github.com/user-attachments/assets/aea708e5-73f9-4661-9b65-8f3aba2d4106" />
 
-The alert confirms that the user 'jacked' has successfully authenticated and opened a root session by the PAM authentication system. This was then followed by administrative activity which affected system configuration files. This event was classified as authentication success and priviledge escalation activity which mapped to MITRE ATT&CK technique T1078 (Valid accounts). This shows that Wazuh provides visibility into priviledge session creation and administrative actions performed.
+The alert confirms that the user 'jacked' has successfully authenticated and opened a root session by the PAM authentication system. This was then followed by administrative activity which affected system configuration files. This event was classified as authentication success and privilege escalation activity which mapped to MITRE ATT&CK technique T1078 (Valid accounts). This shows that Wazuh provides visibility into privilege session creation and administrative actions performed.
 
-Alert Details Expanded (Priviledge Escalation):
+Alert Details Expanded (Privilege Escalation):
 
 <img width="1066" height="763" alt="image" src="https://github.com/user-attachments/assets/ffee39e9-8dcc-403a-9637-9d037ef5eec8" />
 <img width="411" height="192" alt="image" src="https://github.com/user-attachments/assets/a26d203c-6194-42a4-bb0a-0fd1fcf5fe40" />
 
-The alert shows that the user 'jacked' has successfully escalated priviledges using sudo and accessed the Wazuh rules configuration file. This activity was mapped to MITRE ATT&CK techniques T1548.003 (Sudo and Sudo Cashing) which indicates priviledge escalation behaviour. 
+The alert shows that the user 'jacked' has successfully escalated privileges using Sudo and accessed the Wazuh rules configuration file. This activity was mapped to MITRE ATT&CK techniques T1548.003 (Sudo and Sudo Cashing) which indicates privilege escalation behaviour. 
 
-This investigation overall demonstrates Wazuh platforms ability to centralise security events and provide detailed information which is required for SOC analysis and incident triage.
+This investigation overall demonstrates Wazuh platform's ability to centralise security events and provide detailed information which is required for SOC analysis and incident triage.
 
 ### Event Correlation and Pattern Detection
 
@@ -109,11 +109,11 @@ Correlation Views:
 
 <img width="1912" height="813" alt="image" src="https://github.com/user-attachments/assets/3eea186c-c4a4-4c1c-b50b-8f23fe2b81bd" />
 
-The results show repeated failed login attempts coming from the same source within a short timeframe. This patterns indicates potential brute force or credential guessing behaviour. Multiple events across time where correlated with source attributes to distinguish between isolated login failures and repeated suspicious authentication activity. This shows that SIEM tools support behavioural based threat detection rather than individual event analysis.
+The results show repeated failed login attempts coming from the same source within a short timeframe. This pattern indicates potential brute force or credential guessing behaviour. Multiple events across time were correlated with source attributes to distinguish between isolated login failures and repeated suspicious authentication activity. This shows that SIEM tools support behavioural based threat detection rather than individual event analysis.
 
 ### SOC Dashboard 
 
-We created a SOC dashboard in Wazuh to visualise and monitor security events. The dashboard presents key security metrics in a clear and attainable way. To show failed login attempts over time we created a line chart and to source the top IP addresses involved in suspicious activity, we demonstrated it in a bar chart.We also created a pie chart to represent the distribution of different types of security alerts based on severity and event category. The dashboard allowed us to convert raw log data into meaningful visual insights. This makes it easier to identify patterns and potential security threats within the environment. 
+We created a SOC dashboard in Wazuh to visualise and monitor security events. The dashboard presents key security metrics in a clear and attainable way. To show failed login attempts over time we created a line chart and to source the top IP addresses involved in suspicious activity, we demonstrated it in a bar chart. We also created a pie chart to represent the distribution of different types of security alerts based on severity and event category. The dashboard allowed us to convert raw log data into meaningful visual insights. This makes it easier to identify patterns and potential security threats within the environment. 
 
 SOC Dashboard:
 
